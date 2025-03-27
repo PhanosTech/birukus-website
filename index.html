@@ -1,1 +1,904 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>Home - Brand</title><meta name="twitter:title" content="@birukus"><meta name="twitter:card" content="summary"><meta property="og:image" content="http://birukus.com/assets/img/bifu1.png"><meta name="description" content="Love your self. Live in the present. Be a blessing to others."><meta property="og:type" content="article"><meta name="twitter:image" content="http://birukus.com/assets/img/bifu1.png"><link rel="icon" type="image/png" sizes="1666x2000" href="assets/img/bifu1.png"><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="assets/css/styles.min.css"></head><body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="56"><nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav" style="background: linear-gradient(rgba(0,0,0,0.67), rgba(255,255,255,0.18));filter: sepia(100%);"><div class="container"><a class="navbar-brand" href="#page-top" style="font-size: 101px;color: var(--bs-white);font-family: Muli;filter: blur(0px) contrast(200%) invert(0%) sepia(0%);opacity: 0.25;">BIRUKUS</a><button class="navbar-toggler float-end" data-bs-toggle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarResponsive"><i class="fa fa-bars"></i></button></div></nav><header class="masthead" style="background: url(&quot;assets/img/bg-pattern.png&quot;), linear-gradient(to left, var(--bs-gray-700) 0%, var(--bs-success));"><div class="container h-100"><div class="row h-100"><div class="col-md-8 m-auto"><h1 class="section-heading" style="font-size: 124px;">Make every moment count</h1></div></div></div></header><section class="text-center bg-primary download" id="download"><div class="container"><div class="row"><div class="col-md-8 mx-auto"><h2 class="section-heading">Live in the present!</h2></div></div></div></section><section class="bg-danger contact" id="contact"><div class="container"><h2 style="background: rgba(255,255,255,0.74);"><span>We&nbsp;</span><i class="fa fa-heart"></i><span>&nbsp;new friends!</span></h2><ul class="list-inline list-social"><li class="list-inline-item social-twitter"><a href="https://twitter.com/birukus"><i class="fa fa-twitter"></i></a></li><li class="list-inline-item social-facebook"></li><li class="list-inline-item social-google-plus"></li></ul></div></section><footer><div class="container"><p>©&nbsp;Brand 2022. All Rights Reserved.</p></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/script.min.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birukus - Software Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #0d1117; /* Dark space blue/black */
+            --secondary-color: #161b22; /* Slightly lighter dark */
+            --accent-color: #58a6ff; /* Bright blue accent */
+            --text-color: #c9d1d9; /* Light gray text */
+            --text-muted: #8b949e; /* Muted gray */
+            --glow-color: rgba(88, 166, 255, 0.7);
+            --star-color: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+            --font-title: 'Orbitron', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+            background-image:
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            animation: twinkle 15s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+            100% { background-position: -550px -550px, -310px -290px, -120px 0px, 80px -150px; } /* Adjust end positions */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+         header::before { /* Subtle data stream effect */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--glow-color), transparent);
+            animation: data-stream 6s linear infinite;
+        }
+
+        @keyframes data-stream {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+
+        header h1 {
+            font-family: var(--font-title);
+            font-size: 2.8em;
+            color: var(--text-color);
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--glow-color);
+        }
+
+        header h2 {
+            font-family: var(--font-main);
+            font-size: 1.5em;
+            color: var(--accent-color);
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.95em;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* --- Sections --- */
+        section {
+            background-color: var(--secondary-color);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            opacity: 0; /* Initially hidden for animation */
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h3 {
+            font-family: var(--font-title);
+            color: var(--accent-color);
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--accent-color);
+            position: relative;
+        }
+
+         section h3::after { /* Pulsing dot */
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--glow-color);
+            animation: pulse 2s infinite ease-in-out;
+         }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+
+        /* --- Summary --- */
+        #summary p {
+            font-size: 1.1em;
+        }
+
+        /* --- Technical Skills --- */
+         #skills h3::after { display: none; } /* Hide pulse for this section */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skills-category {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .skills-category h4 {
+            font-family: var(--font-main);
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .skills-category li {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+            color: var(--text-muted);
+        }
+
+        /* --- Interactive Language Constellation --- */
+        #language-constellation {
+            position: relative;
+            width: 100%;
+            min-height: 450px; /* Adjust as needed */
+            background: radial-gradient(ellipse at center, rgba(13, 17, 23, 0.5) 0%, rgba(13, 17, 23, 0) 70%);
+            border-radius: 50%;
+            margin: 30px auto;
+            overflow: hidden; /* Keep orbits contained */
+            border: 1px dashed var(--text-muted); /* Visual guide */
+        }
+
+        .language-orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px dashed rgba(88, 166, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-1 { width: 150px; height: 150px; }
+        .orbit-2 { width: 250px; height: 250px; }
+        .orbit-3 { width: 350px; height: 350px; }
+        .orbit-4 { width: 420px; height: 420px; } /* For Python libs */
+
+        .language-node, .library-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7em;
+            color: var(--primary-color);
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 0 5px var(--glow-color);
+        }
+
+        .language-node:hover, .library-node:hover {
+            transform: scale(1.3) translate(-38%, -38%); /* Adjust translate for scaling */
+            box-shadow: 0 0 15px var(--glow-color);
+            z-index: 10;
+        }
+
+        /* Proficiency Levels */
+        .lang-best { width: 45px; height: 45px; background-color: #79c0ff; box-shadow: 0 0 8px #79c0ff; } /* Lighter Blue */
+        .lang-good { width: 35px; height: 35px; background-color: #58a6ff; box-shadow: 0 0 6px #58a6ff; } /* Standard Accent */
+        .lang-little { width: 25px; height: 25px; background-color: #388bfd; box-shadow: 0 0 4px #388bfd; font-size: 0.6em;} /* Darker Blue */
+
+        .library-node {
+            width: 20px; height: 20px; background-color: #a3a3a3; font-size: 0.5em;
+            color: var(--primary-color); box-shadow: 0 0 3px #a3a3a3;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 5; /* Below main langs */
+        }
+
+        .language-node[data-lang="Python"]:hover ~ .library-node {
+            opacity: 1;
+        }
+
+
+        .node-label {
+            position: absolute;
+            bottom: -20px; /* Position label below node */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            color: var(--text-muted);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: rgba(13, 17, 23, 0.7);
+            padding: 2px 5px;
+            border-radius: 3px;
+            pointer-events: none; /* Don't interfere with hover on node */
+        }
+
+        .language-node:hover .node-label, .library-node:hover .node-label {
+            opacity: 1;
+            z-index: 11;
+        }
+
+
+        /* --- Professional Experience --- */
+        .job {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(88, 166, 255, 0.1);
+            position: relative; /* For potential pseudo-element animations */
+        }
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Wrap on smaller screens */
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        .job-company {
+            font-size: 1.1em;
+            color: var(--accent-color);
+        }
+        .job-dates {
+            font-size: 0.95em;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .job ul {
+            list-style: none; /* Use custom bullet */
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .job li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeInItem 0.5s ease-out forwards;
+            /* animation-delay needs JS or manual setting */
+        }
+
+        .job li::before { /* Custom bullet - data point / star */
+            content: '✧'; /* Or use '→', '📡', '🛰️' - may need font support */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-size: 1.2em;
+            line-height: 1;
+            animation: bulletGlow 3s infinite alternate;
+        }
+
+        @keyframes bulletGlow {
+            from { text-shadow: 0 0 2px var(--glow-color); }
+            to { text-shadow: 0 0 8px var(--glow-color); }
+        }
+
+        @keyframes fadeInItem {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .job strong { /* Highlight key technologies/concepts */
+             color: var(--accent-color);
+             font-weight: 400;
+        }
+
+        .technologies {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .technologies strong {
+            color: var(--text-muted);
+            font-weight: bold;
+        }
+        /* --- Education --- */
+         #education .job-header { /* Re-use job styles for education entries */
+             margin-bottom: 5px;
+         }
+         #education p {
+             margin-left: 0; /* No indent needed */
+         }
+
+         .education-entry {
+             margin-bottom: 20px;
+             position: relative;
+             padding-left: 40px; /* Space for icon */
+         }
+         .education-entry::before {
+            content: '🎓'; /* Graduation cap icon */
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 1.5em;
+            color: var(--accent-color);
+         }
+
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            header h2 { font-size: 1.3em; }
+            .container { padding: 15px; }
+            section { padding: 20px; }
+            .job-header { flex-direction: column; align-items: flex-start; }
+            .job-dates { margin-top: 5px; }
+            #language-constellation { min-height: 350px; } /* Smaller constellation */
+             .orbit-1 { width: 100px; height: 100px; }
+             .orbit-2 { width: 180px; height: 180px; }
+             .orbit-3 { width: 260px; height: 260px; }
+             .orbit-4 { width: 320px; height: 320px; }
+             .lang-best { width: 35px; height: 35px; }
+             .lang-good { width: 28px; height: 28px; }
+             .lang-little { width: 20px; height: 20px; }
+             .library-node { width: 15px; height: 15px; }
+             .node-label { font-size: 0.7em; bottom: -15px;}
+        }
+
+         @media (max-width: 480px) {
+             header h1 { font-size: 1.8em; }
+             header h2 { font-size: 1.1em; }
+             .contact-info span { display: block; margin: 5px 0; } /* Stack contact info */
+             .skills-container { flex-direction: column; }
+             .skills-category { min-width: 100%; }
+             #language-constellation { display: none; } /* Hide complex animation on small screens */
+             #skills .skills-container { display: block;} /* Fallback to list view */
+             #skills .skills-category { margin-bottom: 15px; }
+         }
+
+
+        /* -- Animation Trigger Class -- */
+        .animate-satellite::before {
+            content: '🛰️'; /* Satellite icon */
+            position: absolute;
+            top: -10px;
+            left: -50px; /* Start off-screen */
+            font-size: 1.5em;
+            opacity: 0;
+            animation: fly-by 5s ease-out forwards;
+            z-index: -1; /* Behind content */
+        }
+
+        @keyframes fly-by {
+            0% { left: -50px; opacity: 0; transform: rotate(-20deg); }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { left: 110%; opacity: 0; transform: rotate(20deg); }
+        }
+
+        .animate-data-points::after {
+             content: '';
+             position: absolute;
+             bottom: 5px;
+             right: 20px;
+             width: 50px;
+             height: 30px;
+             /* Simple representation of data points / graph */
+             background: linear-gradient(to top, var(--accent-color) 2px, transparent 2px) 0 100% / 4px 4px,
+                         linear-gradient(to top, var(--accent-color) 2px, transparent 2px) 4px 100% / 4px 4px,
+                         linear-gradient(to top, var(--accent-color) 2px, transparent 2px) 8px 100% / 4px 4px,
+                         linear-gradient(to top, var(--accent-color) 2px, transparent 2px) 12px 100% / 4px 4px,
+                         linear-gradient(to top, var(--accent-color) 2px, transparent 2px) 16px 100% / 4px 4px;
+             background-repeat: no-repeat;
+             opacity: 0;
+             animation: data-appear 1.5s 0.5s ease-out forwards;
+         }
+
+         @keyframes data-appear {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 0.6; transform: translateY(0); }
+         }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>&#66;&#105;&#114;&#117;&#104;&#32;&#84;&#101;&#115;&#102;&#97;&#121;&#101;</h1>
+            <h2>SOFTWARE ENGINEER</h2>
+            <div class="contact-info">
+                <span>Fairfax, Virginia</span> |
+                <a href="mailto:&#98;&#116;&#101;&#115;&#102;&#97;&#121;&#101;&#64;&#98;&#114;&#105;&#117;&#107;&#117;&#115;&#46;&#99;&#111;&#109;">&#98;&#116;&#101;&#115;&#102;&#97;&#121;&#101;&#64;&#98;&#114;&#105;&#117;&#107;&#117;&#115;&#46;&#99;&#111;&#109;</a> |
+                <span>&#50;&#48;&#50;&#45;&#55;&#48;&#52;&#45;&#54;&#56;&#57;&#53;</span> |
+                <a href="http://www.birukus.com" target="_blank">www.birukus.com</a>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h3>SUMMARY</h3>
+            <p>
+                Aerospace Software Engineer with a BS in Physics and MS in Computer Science, specializing in bridging
+                hardware/software gaps for mission-critical remote sensing systems. I thrive on architecting solutions for
+                multidisciplinary challenges—whether optimizing satellite data processing algorithms, building CI/CD pipelines,
+                or modeling single-event-upsets in satellites. My work is driven by a first-principles approach to problem-
+                solving, combining rigorous math/EE foundations with modern DevOps practices (Kubernetes, CI/CD) to
+                deliver scalable, physics-aware software.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h3>TECHNICAL SKILLS</h3>
+
+             <!-- Interactive Language Constellation -->
+            <h4>Programming Languages Proficiency</h4>
+            <div id="language-constellation" aria-label="Interactive constellation showing programming language proficiency">
+                <!-- Orbits -->
+                <div class="language-orbit orbit-1"></div>
+                <div class="language-orbit orbit-2"></div>
+                <div class="language-orbit orbit-3"></div>
+                <div class="language-orbit orbit-4"></div>
+
+                <!-- Nodes will be positioned by JavaScript -->
+                 <!-- Best -->
+                <div class="language-node lang-best" data-lang="Python" data-orbit="1" data-angle="0">Py
+                    <span class="node-label">Python (Best)</span></div>
+                <div class="language-node lang-best" data-lang="C" data-orbit="1" data-angle="90">C
+                    <span class="node-label">C (Best)</span></div>
+                <div class="language-node lang-best" data-lang="Java" data-orbit="1" data-angle="180">Java
+                    <span class="node-label">Java (Best)</span></div>
+                <div class="language-node lang-best" data-lang="JavaScript" data-orbit="1" data-angle="270">JS
+                    <span class="node-label">JavaScript (Best)</span></div>
+
+                <!-- Good -->
+                <div class="language-node lang-good" data-lang="C++" data-orbit="2" data-angle="45">C++
+                     <span class="node-label">C++ (Good)</span></div>
+                <div class="language-node lang-good" data-lang="Go" data-orbit="2" data-angle="135">Go
+                     <span class="node-label">Go (Good)</span></div>
+                 <div class="language-node lang-good" data-lang="Zig" data-orbit="2" data-angle="225">Zig
+                     <span class="node-label">Zig (Good)</span></div>
+                 <div class="language-node lang-good" data-lang="Terraform" data-orbit="2" data-angle="315">TF
+                     <span class="node-label">Terraform (Good)</span></div>
+
+                 <!-- Little -->
+                 <div class="language-node lang-little" data-lang="VHDL" data-orbit="3" data-angle="20">VHDL
+                     <span class="node-label">VHDL (Little)</span></div>
+                 <div class="language-node lang-little" data-lang="Verilog" data-orbit="3" data-angle="110">Verilog
+                     <span class="node-label">Verilog (Little)</span></div>
+                 <div class="language-node lang-little" data-lang="Rust" data-orbit="3" data-angle="200">Rust
+                     <span class="node-label">Rust (Little)</span></div>
+                 <div class="language-node lang-little" data-lang="CSharp" data-orbit="3" data-angle="290">C#
+                     <span class="node-label">C# (Little)</span></div>
+
+                <!-- Python Libraries (orbit around Python node or fixed near it) -->
+                 <div class="library-node" data-library="TensorFlow" data-parent="Python" data-orbit="4" data-angle="30">TF
+                     <span class="node-label">TensorFlow</span></div>
+                 <div class="library-node" data-library="PyTorch" data-parent="Python" data-orbit="4" data-angle="150">Torch
+                    <span class="node-label">PyTorch</span></div>
+                 <div class="library-node" data-library="NumPy" data-parent="Python" data-orbit="4" data-angle="270">NumPy
+                     <span class="node-label">NumPy</span></div>
+            </div>
+             <p style="text-align: center; font-size: 0.9em; color: var(--text-muted); margin-top: -15px; margin-bottom: 20px;">
+                Hover over nodes to see details. Node size and orbit indicate proficiency (Larger/Inner = Higher).
+            </p>
+
+
+            <!-- Static Skills List -->
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>Python, C/C++, Java, Go, MATLAB</li>
+                        <li>Zig, V, Node.js, HTML/JS/CSS</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>Machine Learning & Data Science</h4>
+                    <ul>
+                        <li>PyTorch, TensorFlow, NumPy, SciPy</li>
+                        <li>Plotly, Pandas</li>
+                    </ul>
+                </div>
+                 <div class="skills-category">
+                    <h4>DevOps & Cloud</h4>
+                    <ul>
+                        <li>Docker, Kubernetes, Terraform</li>
+                        <li>Git, Gitlab CI/CD, Jenkins</li>
+                        <li>AWS (EC2, EKS, S3...)</li>
+                    </ul>
+                </div>
+                 <div class="skills-category">
+                    <h4>Web Development</h4>
+                    <ul>
+                        <li>FastAPI, Tornado, Uvicorn (ASGI)</li>
+                        <li>RESTful APIs, CI/CD Pipelines</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>Engineering & Simulation</h4>
+                    <ul>
+                        <li>SolidWorks, AutoCAD Inventor</li>
+                        <li>COMSOL Multiphysics, FEA</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>Additional Tools</h4>
+                    <ul>
+                        <li>ENVI, PostGIS, GitLab, JIRA, Confluence</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3>PROFESSIONAL EXPERIENCE</h3>
+
+            <div class="job" data-animation="satellite">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Senior Principal Aerospace Engineer</div>
+                        <div class="job-company">ASRC Federal</div>
+                    </div>
+                    <div class="job-dates">2015 - Present</div>
+                </div>
+                <h4>Team Leadership & Agile Management:</h4>
+                <ul>
+                    <li>Led a team of 6 satellite software developers, overseeing task delegation, sprint planning, and Agile workflows.</li>
+                    <li>Managed daily Scrum meetings, drove software architecture decisions, and delivered recurring progress updates to stakeholders, ensuring alignment with project timelines and customer expectations.</li>
+                </ul>
+                 <h4>GRITT Software Development:</h4>
+                 <ul>
+                    <li>Spearheaded the design and development of <strong>GRITT</strong> (GOES-R Radiometric and INR Trending Tool) for NASA, a Python-based data analysis platform deployed across <strong>NOAA's AWS cloud</strong> and satellite ground systems. GRITT enables engineers to detect radiometric anomalies (ABI sensors) and geolocation inaccuracies (L1b imagery), directly supporting mission-critical satellite data integrity.</li>
+                    <li><strong>Backend Architecture:</strong> Engineered a distributed job scheduler (Python) to manage cron-based data ingestion, real-time processing, and report generation. Workers asynchronously processed jobs without Docker/Kubernetes dependencies, enabling lightweight deployment across multiple servers.</li>
+                    <li><strong>Data Visualization & Customization:</strong> Integrated <strong>Plotly</strong> to empower users with dynamic, customizable plots and automated reports. Implemented user-defined logic for color-coded tables and dashboards, streamlining anomaly detection for operational teams.</li>
+                    <li><strong>Scalable Data Pipeline:</strong> Built a backend leveraging <strong>InfluxDB</strong> for time-series data storage, automating ingestion from heterogeneous satellite data sources. Supported seamless <strong>Kubernetes</strong> integration for cloud-native scalability.</li>
+                </ul>
+                 <h4>DevOps & Lab Infrastructure:</h4>
+                 <ul>
+                    <li>Setup a Linux based software development lab for the company, deploying 6 Dell PowerEdge servers, 2 Synology NAS units, and ESXi hypervisors.</li>
+                    <li>Configured OpenNebula for <strong>Terraform</strong>-based AWS environment testing and <strong>GitLab CI/CD</strong> pipelines for Kubernetes/containerized deployments.</li>
+                    <li>Optimized 6 Linux workstations with NVIDIA GPUs for LLM fine-tuning R&D.</li>
+                </ul>
+            </div>
+
+            <div class="job" data-animation="data-points">
+                <div class="job-header">
+                     <div>
+                        <div class="job-title">Senior Software Engineer</div>
+                        <div class="job-company">Sigma Space</div>
+                     </div>
+                    <div class="job-dates">2013 - 2015</div>
+                </div>
+                <h4>High-Performance Point-Cloud Processing:</h4>
+                <ul>
+                    <li>Engineered a <strong>C++11</strong> data processing software stack converting raw FPGA-acquired Lidar data into geospatial 3D point-clouds.</li>
+                    <li>Leveraged <strong>SIMD vectorization</strong>, and lock-free concurrency to reduce processing time from 52 minutes to 1.8 seconds for 1 second of flight data (<strong>1700x acceleration</strong>), enabling near-real-time analysis.</li>
+                </ul>
+                <h4>Noise Reduction Algorithms:</h4>
+                 <ul>
+                    <li>Developed statistical filtering modules to remove atmospheric/ sensor noise from point-clouds, improving data accuracy.</li>
+                 </ul>
+                <h4>Calibration & Bias Correction:</h4>
+                <ul>
+                    <li>Built a C++ framework to automate sensor calibration, identifying timing anomalies in raw data streams.</li>
+                    <li>Prototyped a brute-force numerical solver to compute Lidar bias offsets, reducing geolocation errors.</li>
+                </ul>
+                 <h4>Automated Workflows:</h4>
+                 <ul>
+                    <li>Designed <strong>Python</strong> scripts to orchestrate end-to-end data processing, reducing manual intervention for batch operations.</li>
+                 </ul>
+                <div class="technologies">
+                    <strong>Technologies:</strong> C++11 (STL, Boost), VHDL, Kintex FPGA, Vivado, LabView, Matlab, Python, SIMD/vectorization, LidAR point-cloud processing
+                </div>
+            </div>
+
+             <div class="job" data-animation="data-points">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Staff Scientist</div>
+                        <div class="job-company">Advanced Reconnaissance Corp</div>
+                    </div>
+                    <div class="job-dates">2012 - 2013</div>
+                </div>
+                <p>Built software for hyperspectral imaging systems detecting IEDs and terrain anomalies for military reconnaissance applications.</p>
+                <h4>IED Detection Algorithms:</h4>
+                <ul>
+                    <li>Engineered a <strong>Matlab</strong>-based road boundary tracking and disturbed earth detection system for aerial hyperspectral imagery.</li>
+                    <li>Developed software for processing airborne imagery data, performing spectral signature analysis to identify disturbed soil patterns indicative of buried threats.</li>
+                </ul>
+                <h4>Wearable Sensor Analytics:</h4>
+                <ul>
+                    <li>Developed a real-time disturbed-earth detection algorithm for a soldier-mounted hyperspectral camera system.</li>
+                    <li>Deployed on a heads-up display (<strong>HUD</strong>), the tool marked high-risk zones, leveraging a proprietary soil texture/reflectance model to reduce false positives.</li>
+                </ul>
+                 <h4>GIS Visualization Tools:</h4>
+                 <ul>
+                    <li>Developed a <strong>python</strong> tool to overlay hyperspectral road surveillance data on 2D google maps, enabling analysts to geo-locate IED risks using <strong>PostGIS</strong>.</li>
+                 </ul>
+                 <h4>Field Validation:</h4>
+                 <ul>
+                    <li>Led 12+ field tests with wearable multispectral sensors, demonstrating algorithm reliability to DoD stakeholders in simulated combat environments.</li>
+                 </ul>
+                <div class="technologies">
+                    <strong>Technologies:</strong> C, Python, Java, PostGIS, Unix/Linux, Hyperspectral Imaging (ENVI/IDL), HUD Integration.
+                </div>
+            </div>
+
+             <div class="job" data-animation="satellite">
+                <div class="job-header">
+                     <div>
+                        <div class="job-title">Lead Software Engineer</div>
+                        <div class="job-company">Carr Astronautics</div>
+                     </div>
+                    <div class="job-dates">2010 - 2012</div>
+                </div>
+                 <p>Developed star-based navigation algorithms for the GOES-R Advanced Baseline Imager (ABI), ensuring sub-pixel geolocation accuracy in Earth observation imagery.</p>
+                <h4>Star Navigation Algorithms:</h4>
+                <ul>
+                    <li>Engineered <strong>C++</strong> software to detect star centroids in ABI instrument imagery, compute residuals against the star catalog, and feed corrections into a <strong>Kalman filter</strong>.</li>
+                    <li>This reduces geolocation errors, enabling precise alignment of Earth imagery pixels for weather forecasting and climate modeling.</li>
+                </ul>
+                <h4>Star Catalog Management:</h4>
+                <ul>
+                    <li>Built a C++ tool to generate 7-day schedules of viewable stars for the ABI imager, optimizing scans during 15-minute observation windows.</li>
+                    <li>Automated star selection based on magnitude, angular separation, and instrument field-of-view constraints.</li>
+                </ul>
+                <h4>Project Leadership:</h4>
+                 <ul>
+                    <li>Directed two Critical Software Components (CSCs) for the GOES-R Ground Segment, adhering to <strong>CMMI Level 3</strong> processes.</li>
+                    <li>Authored 50+ system/software requirements in <strong>DOORS</strong> and managed schedules via IBM ClearQuest/MS Project.</li>
+                 </ul>
+                <div class="technologies">
+                    <strong>Technologies:</strong> C++11, Java, MATLAB, DOORS, Kalman Filters, CMMI Level 3.
+                </div>
+            </div>
+
+             <div class="job" data-animation="data-points">
+                <div class="job-header">
+                     <div>
+                        <div class="job-title">Physicist</div>
+                        <div class="job-company">BAE Systems</div>
+                     </div>
+                    <div class="job-dates">2008 - 2010</div>
+                </div>
+                <h4>HAARP Signal Detection & Analysis:</h4>
+                <ul>
+                    <li>Deployed and maintained magnetometer arrays across 3+ remote Alaskan sites to capture ULF (0.1–5 Hz) signals generated by <strong>HAARP's</strong> ionospheric heating experiments.</li>
+                    <li>Developed <strong>Matlab</strong> software to correlate magnetic field data across sites, isolating propagated magnetospheric signals from terrestrial noise (SNR improvement).</li>
+                </ul>
+                <h4>Magnetospheric Tomography:</h4>
+                <ul>
+                    <li>Built an interactive 3D model of trapped proton fluxes in low-Earth orbit (LEO) using satellite magnetometer data, identifying radiation hotspots impacting spacecraft longevity (SAA).</li>
+                    <li>Utilized <strong>COMSOL</strong> for modeling aspects.</li>
+                </ul>
+                <div class="technologies">
+                    <strong>Technologies:</strong> Python, C++, COMSOL, ULF signal processing, HAARP, magnetometers (fluxgate/induction coil), SEU/SEE analysis.
+                </div>
+            </div>
+
+        </section>
+
+        <section id="education">
+            <h3>EDUCATION</h3>
+             <div class="education-entry">
+                <div class="job-header"> <!-- Reusing job-header styling -->
+                     <div>
+                        <div class="job-title">Masters of Science in Computer and Electrical Engineering</div>
+                        <div class="job-company">Johns Hopkins University (Baltimore, Maryland)</div>
+                     </div>
+                     <div class="job-dates">2012 - 2015</div>
+                </div>
+            </div>
+             <div class="education-entry">
+                <div class="job-header">
+                     <div>
+                        <div class="job-title">Bachelor of Science in Physics</div>
+                        <div class="job-company">University of Maryland (College Park, Maryland)</div>
+                     </div>
+                     <div class="job-dates">2004 - 2008</div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /container -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Intersection Observer for Section Fade-in ---
+            const sections = document.querySelectorAll('section');
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+
+                        // Trigger job item animations within the section
+                        const jobItems = entry.target.querySelectorAll('.job li');
+                        jobItems.forEach((item, index) => {
+                            item.style.animationDelay = `${index * 0.1}s`;
+                        });
+
+                         // Trigger job-specific animations
+                         const jobBlocks = entry.target.querySelectorAll('.job[data-animation]');
+                         jobBlocks.forEach(job => {
+                             const animationType = job.getAttribute('data-animation');
+                             if (animationType === 'satellite') {
+                                 job.classList.add('animate-satellite');
+                             } else if (animationType === 'data-points') {
+                                 job.classList.add('animate-data-points');
+                             }
+                             // Remove the attribute after adding class to prevent re-triggering if needed
+                             // job.removeAttribute('data-animation');
+                         });
+
+                        observer.unobserve(entry.target); // Optional: Animate only once
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+
+            // --- Language Constellation Logic ---
+            const constellation = document.getElementById('language-constellation');
+            if (constellation) { // Check if constellation exists (might be hidden on mobile)
+                const nodes = constellation.querySelectorAll('.language-node, .library-node');
+                const radius = constellation.offsetWidth / 2; // Base radius
+
+                nodes.forEach(node => {
+                    const orbitLevel = parseInt(node.dataset.orbit);
+                    let angle = parseInt(node.dataset.angle) * (Math.PI / 180); // Convert degrees to radians
+                    const isLibrary = node.classList.contains('library-node');
+                    let orbitRadius;
+
+                    // Determine orbit radius based on orbit level or parent
+                    if (isLibrary) {
+                        // Position libraries relative to Python or a specific orbit
+                         const pythonNode = constellation.querySelector('.language-node[data-lang="Python"]');
+                         // Simple fixed orbit for libraries around center for now
+                         orbitRadius = radius * 0.85; // Example: orbit 4 radius
+                    } else {
+                         // Adjust orbit radii relative to container size
+                         if (orbitLevel === 1) orbitRadius = radius * 0.3; // Inner orbit
+                         else if (orbitLevel === 2) orbitRadius = radius * 0.55; // Middle orbit
+                         else if (orbitLevel === 3) orbitRadius = radius * 0.8; // Outer orbit
+                         else orbitRadius = radius * 0.1; // Default small orbit if undefined
+                    }
+
+
+                    const nodeSize = node.offsetWidth;
+
+                    // Initial position calculation
+                    let x = Math.cos(angle) * orbitRadius - nodeSize / 2;
+                    let y = Math.sin(angle) * orbitRadius - nodeSize / 2;
+
+                    node.style.transform = `translate(${x}px, ${y}px)`;
+
+                    // Animation logic (simple rotation)
+                    let speed = 0.0005 + (3 - orbitLevel) * 0.0005; // Slower for outer orbits
+                    if (isLibrary) speed = 0.0015; // Faster orbit for libraries
+
+
+                     function animateNode() {
+                         angle += speed;
+                         x = Math.cos(angle) * orbitRadius - nodeSize / 2;
+                         y = Math.sin(angle) * orbitRadius - nodeSize / 2;
+
+                         // Apply transform while preserving hover scale if active
+                         let currentTransform = node.style.transform;
+                         let scaleMatch = currentTransform.match(/scale\(([^)]+)\)/);
+                         let scaleValue = scaleMatch ? scaleMatch[0] : ''; // Keep existing scale
+
+                         // Need to adjust translate based on scale to keep center correct during hover
+                         let hoverScaleFactor = 1;
+                         if (scaleValue) {
+                             hoverScaleFactor = parseFloat(scaleValue.replace(/scale\(|\)/g, ''));
+                         }
+                         // Adjust translation calculation for centered scaling effect (approximate)
+                         let adjustedX = Math.cos(angle) * orbitRadius - (nodeSize/2 * hoverScaleFactor) + (nodeSize/2 * (hoverScaleFactor-1));
+                         let adjustedY = Math.sin(angle) * orbitRadius - (nodeSize/2 * hoverScaleFactor)+ (nodeSize/2 * (hoverScaleFactor-1));
+
+
+                         node.style.transform = `translate(${x}px, ${y}px) ${scaleValue}`;
+
+
+                         requestAnimationFrame(animateNode);
+                     }
+
+                     // Only start animation if not hidden by media query
+                     if (window.getComputedStyle(constellation).display !== 'none') {
+                        requestAnimationFrame(animateNode);
+                     }
+                });
+            }
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+</html>
